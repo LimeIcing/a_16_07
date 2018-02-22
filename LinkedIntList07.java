@@ -8,7 +8,16 @@ public class LinkedIntList07 {
      */
 
     public int deleteBack() {
-        
+        int back;
+        ListNode07 current = front;
+
+        while (current.next.next != null) {
+            current = current.next;
+        }
+
+        back = current.next.data;
+        current.next = null;
+        return back;
     }
 
     // Everything below is copied from the book
